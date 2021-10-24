@@ -3,6 +3,7 @@ package computer;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +16,7 @@ import computer.controller.BeanConfiguration;
 import computer.repository.ComputerRepository;
 
 @SpringBootApplication
-public class SpringComputersApplication {
+public class SpringComputersApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringComputersApplication.class, args);
 		
