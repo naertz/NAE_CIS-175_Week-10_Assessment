@@ -14,18 +14,15 @@ import computer.beans.Cpu;
 
 @Configuration
 public class BeanConfiguration {
-    @Bean
-    public Computer computer() {
-        Computer bean = new Computer("GIGABYTE-WORKSTATION-234");
-        //bean.setRam(128);
-        //bean.setValue(7000.00);
-        //bean.setIsWaterCooled(false);
-        return bean;
-    }
-    
-    @Bean
-    public Cpu cpu() {
-        Cpu bean = new Cpu("AMD", "Ryzen Threadripper", "3990x", 64);
-        return bean;
-    }
+	@Bean
+	public Computer computer() {
+		Computer bean = new Computer("GIGABYTE-WORKSTATION-234");
+		return bean;
+	}
+	
+	@Bean
+	public Cpu cpu() {
+		Cpu bean = new Cpu("AMD", "Ryzen Threadripper", "3990x", 64);
+		return bean;
+	}
 }

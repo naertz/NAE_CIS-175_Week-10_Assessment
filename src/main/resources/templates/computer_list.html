@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/fonts.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="#">
+        <title>Computer List</title>
+    </head>
+    <body class="main-body">
+        <nav class="top-nav">
+            <ul>
+                <li><a href="../addComputer">Add Computer</a>
+                <li><a class="active" href="../viewList">Computer List</a>
+            </ul>
+        </nav>
+        <form>
+            <table>
+                <tr th:each="currentComputer: ${computer}">
+                    <td th:text="${currentComputer.id}">
+                    <td th:text="${currentComputer.hostname}">
+                    <td th:text="${currentComputer.ram}">
+                    <td th:text="${currentComputer.value}">
+                    <td th:text="${currentComputer.isWaterCooled}">
+                    <td th:text="${currentComputer.cpu.brand}">
+                    <td th:text="${currentComputer.cpu.productLine}">
+                    <td th:text="${currentComputer.cpu.model}">
+                    <td th:text="${currentComputer.cpu.cores}">
+                    <td><a th:href="@{/edit/{id}(id=${currentComputer.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${currentComputer.id})}">Delete</a></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

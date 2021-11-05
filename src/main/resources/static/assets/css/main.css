@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/********/
+/* Body */
+/********/
+
+body.main-body {
+    background-color: #182430;
+    color: #FFFFFF;
+    font-family: 'Play', sans;
+    margin: 0;
+}
+
+/******************/
+/* Navigation Bar */
+/******************/
+
+nav.top-nav {
+    background-color: #081018;
+    width: 100%;
+}
+
+.top-nav ul {
+	align-items: center;
+    display: flex;
+    height: 43px;
+    justify-content: flex-start;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a:link {
+    color: #E8E8DC;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.top-nav a.active {
+    background-color: #183048;
+    color: #E8E8DC;
+}
+
+.top-nav a:hover {
+    background-color: #188060;
+    color: #E8E8DC;
+}
+
+.top-nav a:visited {
+    color: #E8E8DC;
+}

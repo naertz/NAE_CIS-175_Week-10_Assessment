@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="#">
+        <title>Add/Edit Computer</title>
+    </head>
+    <body class="main-body">
+        <nav class="top-nav">
+            <ul>
+                <li><a class="active" href="../addComputer">Add Computer</a>
+                <li><a href="../viewList">Computer List</a>
+            </ul>
+        </nav>
+        <form th:object="${newComputer}" th:action="@{/update/{id}(id=${newComputer.id})}" method=POST>
+            <fieldset>
+                <legend>Enter Computer Information</legend>
+                <div>
+                    <label for="hostname">Hostname</label>
+                    <input type="text" name="hostname" placeholder="MY-COMPUTER-100" size="32" th:field="*{hostname}">
+                </div>
+                <div>
+                    <label for="ram">RAM Amount</label>
+                    <input type="text" name="ram" placeholder="32 GB" size="32" th:field="*{ram}">
+                </div>
+                <div>
+                    <label for="value">Monetary Value</label>
+                    <input type="text" name="value" placeholder="999.99" size="16" th:field="*{value}">
+                </div>
+                <div>
+                    <label for="isWaterCooled">Is The Computer Water-cooled?</label>
+                    <input type="checkbox" name="isWaterCooled" value="checked" th:field="*{isWaterCooled}">
+                </div>
+                <div>
+                    <label for="cpu.brand">CPU Brand</label>
+                    <input type="text" name="cpu.brand" placeholder="Intel/AMD/Etc." size="32" th:field="*{cpu.brand}">
+                </div>
+                <div>
+                    <label for="cpu.productLine">CPU Product Line</label>
+                    <input type="text" name="cpu.productLine" placeholder="12th Generation Intel Core i5/Ryzen 7/Etc." th:field="*{cpu.productLine}">
+                </div>
+                <div>
+                    <label for="cpu.model">CPU Model</label>
+                    <input type="text" name="cpu.model" placeholder="i5-12600K/1700x" th:field="*{cpu.model}">
+                </div>
+                <div>
+                    <label for="cpu.cores">CPU Number Of Cores</label>
+                    <input type="text" name="cpu.cores" placeholder="10/8" th:field="*{cpu.cores}">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Add New Computer</legend>
+                <input name="Submit" type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </body>
+</html>
